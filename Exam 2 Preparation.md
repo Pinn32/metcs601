@@ -9,6 +9,17 @@ tags:
   - cs
 ---
 
+# lec-13 CSR, SSR, SSG, ISR
+
+| Rendering Mode | SEO | 速度 | 更新程度 | Cost | Key Idea |
+|----------------|-----|-------------|-----------|------|----------|
+| CSR (Client-Side Rendering) | ❌ 弱（HTML初始空壳） | ⏳ 首屏慢（JS加载后渲染） | 🔄 运行时实时 | 💰 最便宜 | 浏览器加载JS后再生成页面 |
+| SSR (Server-Side Rendering) | ✅ 好 | ⏳ 每次请求都要渲染（慢） | 🔄 每次请求都是最新 | 💰💰 较贵 | 每次 request 都在服务器生成 HTML |
+| SSG (Static Site Generation) | ✅ 非常好 | ⚡ 最快（CDN静态文件） | ❌ 构建时固定 | 💰 最便宜 | build 时生成静态 HTML |
+| ISR (Incremental Static Regeneration) | ✅ 非常好 | ⚡ 接近 SSG（缓存命中时） | 🔄 可定期/按需更新 | 💰💰 略贵于 SSG | SSG + 定期后台重新生成 |
+
+---
+
 # lec-14 Material UI
 
 **四个 MUI Libs: MUI, Joy-UI, Base-UI, MUI-System**  
