@@ -9,6 +9,19 @@ tags:
   - cs
 ---
 
+
+# lec-16 GraphQL & Apollo
+**OOP Design Patterns to ==prevent SQL injection==:**  
+==**DAO:**== Data Access Object  
+==**ORM:**== Object Relational Mapping  
+
+**Apollo Hooks for CRUD in GraphQL:**    
+**Create, Update, Delete:** `useMutation()`  
+**Read:** `useQuery()`  
+
+
+---
+
 # lec-17 Server-Side Architecture
 
 **Tier-1:** Everything in One Place, 无延迟, 超安全, 只有本地 server, 没有 network/scalability, 难以维护和更新  
