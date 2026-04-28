@@ -9,16 +9,31 @@ tags:
   - cs
 ---
 
+# lec-19 Server-Side Architecture
+
+
+
 # lec-20 Cookie, Session, CORS
-- 给 senario / eg, 判断属于 cookie / session / CORS 哪个
 
-## Cookies
-按 Security 分类: HTTP-Only Cookies vs Secure Cookies
-按 Lifetime 分类: Session Cookies vs Persistence Cookies
-按 Behavior 分类: Same-Site Cookies (设置了 `sameSite` 规则的 cookie)
+```tsx
+// HTTP-Only cookie, 不可被 JS 读取
+httpOnly: true,
 
-|**概念**|**是什么**|**存在哪**|**作用**|**谁负责**|
-|---|---|---|---|---|
-|Cookie|存储在浏览器的小数据|浏览器|保存用户信息（如 token、登录状态）|浏览器 + 后端|
-|Session|服务器端的会话数据|服务器内存/数据库|记录用户登录状态|服务器|
-|CORS|跨域访问规则|浏览器安全机制|控制“能不能跨域请求”|浏览器 + 后端响应头|
+// Secure Cookie: 只允许加密网络通过 https 通信, 不允许非加密通讯
+secure: true, 
+
+// 默认 "lax" (松), 改成 "strict" 防止 CSRF
+sameSite: "lax" / "strict" / "none",
+
+// Persistence Cookie: 7天 (单位ms) 后过期, 存在 Disk 里
+// Session Cookie: 不设置 maxAge, 关闭即过期, 存在 RAM 里
+maxAge: 7*24*60*60*1000,
+```
+
+| 类型 | 存储位置 | 容量 | 生命周期 | 是否跨 tab | 随 HTTP 发给服务器 | 安全性 | 适用场合 |
+|------|----------|------|----------|------------|------------------------|------------------|------|
+| Cookie | Browser cookie storage | ~4KB–5KB | 可设置 | ✔ | ✔ | ✔ | 记住登录状态 |
+| Session Storage | RAM | ~5MB | 关 tab 即清除 | ❌ | ❌ | ❌ | 临时用 |
+| Local Storage | Disk | ~5–10MB | 永久 (需手动清除) | ✔ | ❌ | ⚠️ | 持久本地偏好设置 |
+
+**CORS: Cross-Origin Resource Sharing**
