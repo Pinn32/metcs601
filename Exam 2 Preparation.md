@@ -9,9 +9,36 @@ tags:
   - cs
 ---
 
+# lec-10.5 Test-Driven Development
+
+**To run component test with coverage:**  
+**`npm run test -- --coverage`**
+
+**Testing** 是 **==Agile== development** 一个步骤, 边测试边开发叫做 ==**Test Driven Development**==  
+
+---
+
 # lec-11 Next.js
 
+**Create Next App: `npx create-next-app@latest`**  
 
+==**Route Masking:**== Create user-friendly URLs independent of server file structure  
+
+All compo are server-side by default, to enable CSR: declare **`"use client"`** at the top.
+
+**Features of Next.js:**  
+**SEO Features:**  
+Canonical URL  
+Automatic Code Splitting  
+Built-in Head Element  
+**Security Features:**  
+Support Secure Token Handling  
+Support API Routes for Authentication  
+
+**Server-Side API Handling Benefits:**  
+Error Handling (在 server 处理错误, 不暴露到客户端)  
+Field Exposure (只选择 field 暴露, 不暴露所有)  
+API Key Protection (不暴露 key)  
 
 ---
 
@@ -32,9 +59,16 @@ tags:
 **Environment Variable:**  
 `.env` ; `.env.local`  
 
+**useParams() vs. usePathname():**   
+`usePathname()` hook extract the ==entire current path==, 不解读 dynamic routing (比如 `[id]`), 把整个 path 当成一个字符串返回 (eg. `"/user/abc123"`)   
+`useParams()` 只解析 dynamic routing, 只返回 params  `{id: "abc123"}`  
+
 ---
 
 # lec-13 CSR, SSR, SSG, ISR
+
+**SSG:** next.js **default** method.  
+To enable **SSR**, you must **==disable== auto-caching**.
 
 | Rendering Mode | SEO | 速度 | 更新程度 | Cost | Key Idea |
 |----------------|-----|-------------|-----------|------|----------|
@@ -46,6 +80,11 @@ tags:
 ---
 
 # lec-14 Material UI
+
+**MUI Benefits:**  
+Cross-team Collab  
+Being Trusted by Thousands of Orgs  
+Faster Shipping  
 
 **四个 MUI Libs: MUI, Joy-UI, Base-UI, MUI-System**  
 
@@ -64,6 +103,10 @@ Material Design styles, 可以用 **==Emotion== 或 ==styled-components== 来 ov
 ---
 
 # lec-15 MongoDB
+
+**Installation: `npm install mongodb`**  
+
+**"Non-SQL" == "Not Only SQL"**
 
 **Non-Relational, Schema-Less** Database  
 Data stored as ==**BSON (Binary JSON)**==  
@@ -132,11 +175,19 @@ MongoDB: cluster -> database -> **collection** -> ==**document**== (ie. each ent
 
 # lec-19 React Native
 
-**创建 Expo App:** `npx create-expo-app@latest`  
+**React Native Features:**  
+Familiar Dev Env  
+Efficient Dev  
+Consistent UX  
+
+**创建 Expo App: `npx create-expo-app@latest`**  
 
 ==**React Native 特殊文件名:**==  
 `_layout.tsx` -- static components (RootLayout)  
 `index.tsx` -- conditional rendered components (类 page.tsx)  
+
+`<View>` == `<div>`  
+`<Text>` == `<p>`  
 
 **全部没有单位:** ==unitless== in all dimensions, `width: 300; height: 600;`   
 
