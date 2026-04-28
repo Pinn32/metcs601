@@ -9,17 +9,37 @@ tags:
   - cs
 ---
 
+# lec-18 Cyber Security
+
+**CI/CD:** Continuous Integration, Delivery, and ==Deployment==
+
+**Prevent SQL injection: ==DAO, ORM==** (OOP design patterns)
+
+**Federated Authentication:** ==SSO, OAuth==  
+**==Identity Provider:==** 第三方登录平台, eg. 谷歌, GitHub
+
+**CSRF: Cross-Site Request Forgery**  
+
+**OAuth:**  
+**scope:** 从第三方平台获取用户的哪些功能/信息 (eg. read email / send email / repo info / username...)  
+**==state:==** 用户登录时随机生成的状态id, 防止别人跨 tab 拦截你的密码, aka ==防止CSRF==  
+**response_type=code:** 临时通行证, 代替 token, 避免暴露 token 并防止 CSRF  
+
+---
+
 # lec-19 React Native
 
-`npx create-expo-app@latest`
+**创建 Expo App:** `npx create-expo-app@latest`  
 
-`_layout.tsx` -- static components (RootLayout)
-`index.tsx` -- conditional rendered components (类 page.tsx)
+**React Native 特殊文件名:**  
+`_layout.tsx` -- static components (RootLayout)  
+`index.tsx` -- conditional rendered components (类 page.tsx)  
 
-全部没有单位: ==unitless== , `width: 300; height: 600;` 
+**全部没有单位:** ==unitless== in all dimensions, `width: 300; height: 600;`   
 
-只有 ReactNative 可用的 hook: `useDeviceOrientation()`
+**只有 ReactNative 可用的 hook:** `useDeviceOrientation()`   
 
+---
 
 # lec-20 Cookie, Session, CORS
 
