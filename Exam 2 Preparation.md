@@ -9,6 +9,24 @@ tags:
   - cs
 ---
 
+# lec-14 Material UI
+
+**四个 MUI Libs: MUI, Joy-UI, Base-UI, MUI-System**  
+
+**MUI:**  
+Material Design styles, 可以用 **==Emotion== 或 ==styled-components== 来 override** 已有的 styles  
+**Joy-UI:**   
+非 Material Design styles, ==**mobile-first**==  
+**Base-UI:**   
+无 style, 纯组件, ==**mobile-first**==, 需要用 **`useMemo()`** 记住组件和 style 来避免 re-render  
+**MUI System:**   
+可以自定义 style, 通过设置 **`sx` prop** 来自定义 style
+
+
+
+
+---
+
 # lec-15 MongoDB
 
 **Non-Relational, Schema-Less** Database  
