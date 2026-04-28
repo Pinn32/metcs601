@@ -9,6 +9,27 @@ tags:
   - cs
 ---
 
+# lec-15 MongoDB
+
+**Non-Relational, Schema-Less** Database  
+Data stored as ==**BSON (Binary JSON)**==  
+MongoDB: cluster -> database -> **collection** -> ==**document**== (ie. each entry)  
+如果没有 collection / 没有 doc id, ==**MongoDB 会自动帮你创建 collection / 创建 doc id**==  
+
+==**MongoDB CRUD**==  
+**Create:** `insertOne()` ; `insertMany()`  
+**Read:** `find()`  
+**Update:**  
+`updateOne()` ; `updateMany()` ;  
+`replaceOne()` ;  
+`findOneAndUpdate()` ; `findOneAndReplace()` ;  
+`findAndModify()` ;  
+`bulkWrite()`  
+**Delete:** `deleteOne()` ; `deleteMany()`  
+
+
+
+---
 
 # lec-16 GraphQL & Apollo
 **OOP Design Patterns to ==prevent SQL injection==:**  
@@ -18,7 +39,6 @@ tags:
 **Apollo Hooks for CRUD in GraphQL:**    
 **Create, Update, Delete:** `useMutation()`  
 **Read:** `useQuery()`  
-
 
 ---
 
