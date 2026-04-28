@@ -9,6 +9,22 @@ tags:
   - cs
 ---
 
+# lec-17 Server-Side Architecture
+
+**Tier-1:** Everything in One Place, 无延迟, 超安全, 只有本地 server, 没有 network/scalability, 难以维护和更新  
+**Tier-2:** Client & Server+DB (server 和 db 互相依赖, coupled)  
+**Tier-3:** Three-Part System: Client -> Server -> Database  (互不依赖: fully decoupled)
+**N-Tier:** 比以上三种更复杂, scalability 最强, 互不依赖 (fully decoupled), 但复杂.  
+
+**N-Tier:**  
+**传输优化:** 由于 request ==**messages**== 太多太复杂且贵, 需要使用 ==**Loading Balancing**== 算法来优化 message request 步骤.  
+**传输途径: Client, server, database, and combination** can communicate through **messages** method.  
+**Caching:** 可以在任何地方 (client, server, db, combination)  
+**Caching:** Browser / Server-Side / Database / CDN (Content Delivery Networks) Caching
+
+
+---
+
 # lec-18 Cyber Security
 
 **CI/CD:** Continuous Integration, Delivery, and ==Deployment==
