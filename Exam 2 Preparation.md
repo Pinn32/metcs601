@@ -9,6 +9,31 @@ tags:
   - cs
 ---
 
+# lec-11 Next.js
+
+
+
+---
+
+# lec-12 Next.js Routing
+
+**Dynamic Routing:**  
+`app/[propName]`    
+
+**RootLayout:**  
+`app/layout.tsx`, 所有 `page.tsx` 都会在 RootLayout 这个 compo 的 `{children}` 处渲染  
+
+**Page in Router:**  
+`app/projects/page.tsx` ; `app/about/page.tsx`    
+
+**API Config:**  
+`app/api/getFooData/routes.ts` (里面写 fetch api 的 hook)   
+
+**Environment Variable:**  
+`.env` ; `.env.local`  
+
+---
+
 # lec-13 CSR, SSR, SSG, ISR
 
 | Rendering Mode | SEO | 速度 | 更新程度 | Cost | Key Idea |
@@ -109,7 +134,7 @@ MongoDB: cluster -> database -> **collection** -> ==**document**== (ie. each ent
 
 **创建 Expo App:** `npx create-expo-app@latest`  
 
-**React Native 特殊文件名:**  
+==**React Native 特殊文件名:**==  
 `_layout.tsx` -- static components (RootLayout)  
 `index.tsx` -- conditional rendered components (类 page.tsx)  
 
