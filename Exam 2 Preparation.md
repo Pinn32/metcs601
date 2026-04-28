@@ -9,8 +9,16 @@ tags:
   - cs
 ---
 
-# lec-19 Server-Side Architecture
+# lec-19 React Native
 
+`npx create-expo-app@latest`
+
+`_layout.tsx` -- static components (RootLayout)
+`index.tsx` -- conditional rendered components (类 page.tsx)
+
+全部没有单位: ==unitless== , `width: 300; height: 600;` 
+
+只有 ReactNative 可用的 hook: `useDeviceOrientation()`
 
 
 # lec-20 Cookie, Session, CORS
