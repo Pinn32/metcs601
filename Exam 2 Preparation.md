@@ -9,6 +9,134 @@ tags:
   - cs
 ---
 
+# 创建计算器函数
+
+```jsx
+//////////////////////////////////////////////////////////////////
+// 已知: 
+
+"use client";
+
+import {useState} from "react";
+import {StyledButtons, StyledDiv, StyledInputs} from "@/styled-components/styled-components";
+
+export default function Calculator() {
+    const [firstNumber, setFirstNumber] = useState("");
+    const [secondNumber, setSecondNumber] = useState("");
+    const [res, setRes] = useState(0);
+
+    function handleAddition(){
+        setRes(parseFloat(firstNumber) + parseFloat(secondNumber));
+    }
+
+    //////////////////////////////////////////////////////////////////
+    // Add the 3 functions, each for a button (math operation).
+    function handleSubtraction(){
+        setRes(parseFloat(firstNumber) - parseFloat(secondNumber));
+    }
+    function handleMultiplication(){
+        setRes(parseFloat(firstNumber) * parseFloat(secondNumber));
+    }
+    function handleDivision(){
+        setRes(parseFloat(firstNumber) / parseFloat(secondNumber));
+    }
+    //////////////////////////////////////////////////////////////////
+
+    return (
+        <StyledDiv>
+            <label htmlFor={`first`}>Enter a number: </label>
+            <StyledInputs
+                id="first"
+                value={firstNumber}
+                onChange={(e) => setFirstNumber(e.target.value)}
+            />
+
+            <label htmlFor={`second`}>Enter another number: </label>
+            <StyledInputs
+                id="second"
+                value={secondNumber}
+                onChange={(e) => setSecondNumber(e.target.value)}
+            />
+
+            {/*Addition*/}
+            <StyledButtons onClick={handleAddition}>+</StyledButtons>
+
+            {/* ============================================================ */} 
+            {/*Add the 3 other buttons here*/}
+            <StyledButtons onClick={handleSubtraction}>-</StyledButtons>
+            <StyledButtons onClick={handleMultiplication}>*</StyledButtons>
+            <StyledButtons onClick={handleDivision}>/</StyledButtons>
+            {/* ============================================================ */} 
+
+            <p>Result: {res}</p>
+        </StyledDiv>
+    );
+}
+```
+
+
+---
+
+# 创建 Navigation 组件
+
+```jsx
+///////////////////////////////////////////////////////////////////////////////
+// 已知: 
+
+"use client"
+
+import Link from "next/link";
+import {usePathname} from "next/navigation";
+import styled from "styled-components";
+
+const links=[
+    {
+        name: 'Home',
+        href: '/'
+    },
+    {
+        name: 'Invoices',
+        href: '/dashboard/invoices'
+    },
+    {
+        name: 'Customers',
+        href: '/dashboard/customers'
+    },
+]
+
+///////////////////////////////////////////////////////////////////////////////
+// 写以下内容: 
+
+const StyledLink=styled(Link)<{$current:boolean}>`
+    background-color:${(props)=>props.$current?"darkgreen":"darkseagreen"};
+    margin: 2%;
+    padding: 1%;
+`;
+
+export default function Navigation(){
+
+    const currentPath=usePathname();
+
+    return(
+        <nav>
+            {
+                links.map((link)=>
+                    <StyledLink
+                        key={link.href}
+                        href={link.href}
+                        $current={link.href===currentPath}
+                    >
+                        {link.name}
+                    </StyledLink>
+                )
+            }
+        </nav>
+    );
+}
+```
+
+---
+
 # lec-10.5 Test-Driven Development
 
 **To run component test with coverage:**  
@@ -197,7 +325,7 @@ Consistent UX
 
 # lec-20 Cookie, Session, CORS
 
-```tsx
+```jsx
 // HTTP-Only cookie, 不可被 JS 读取
 httpOnly: true,
 
